@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  background: rgb(29, 38, 45)
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .dark-light {
+
+    background-color: rgb(42, 55, 66);
+  }
+
+  .dark-light-2 {
+    background: rgb(56, 72, 87);
+  }
+
+  .text-primary {
+    color: #FF165D;
+  }
+
+  .bg-primary {
+    background: #FF165D;
+  }
+
+  select {
+    appearance: none;
+    background-image: url("/img/down.png");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem top 50%;
+    background-size: 0.65rem auto;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* backdrop-filter: blur(1px); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .parent:hover .child {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .child {
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(10px);
+  }
+
+label {
+  @apply h-6 relative inline-block;
+}
+
+[type="checkbox"] {
+  @apply w-11 h-0 cursor-pointer inline-block;
+  @apply focus:outline-0 dark:focus:outline-0;
+  @apply border-0 dark:border-0;
+  @apply focus:ring-offset-transparent dark:focus:ring-offset-transparent;
+  @apply focus:ring-transparent dark:focus:ring-transparent;
+  @apply focus-within:ring-0 dark:focus-within:ring-0;
+  @apply focus:shadow-none dark:focus:shadow-none;
+  
+  @apply after:absolute before:absolute;
+  @apply after:top-0 before:top-0;
+  @apply after:block before:inline-block;
+  @apply before:rounded-full after:rounded-full;
+
+  @apply after:content-[''] after:w-5 after:h-5 after:mt-0.5 after:ml-0.5;
+  @apply after:shadow-md after:duration-100;
+
+  @apply before:content-[''] before:w-10 before:h-full;
+  @apply before:shadow-[inset_0_0_#000];
+
+  @apply after:bg-white dark:after:bg-gray-50;
+  @apply before:bg-gray-300 dark:before:bg-gray-600;
+  @apply before:checked:bg-primary-100 dark:before:checked:bg-primary-100;
+  @apply checked:after:duration-300 checked:after:translate-x-4;
+
+  @apply disabled:after:bg-opacity-75 disabled:cursor-not-allowed;
+  @apply disabled:checked:before:bg-opacity-40;
+}
+
+.modal {
+  background: rgb(29, 38, 45)
+    
+}
+
+/*.modal button {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal button:hover {
+    background-color: #2c6ac6;
+} */
+}
